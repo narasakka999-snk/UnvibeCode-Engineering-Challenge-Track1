@@ -1,0 +1,1 @@
+Test result: Download interrupted. Previous complete file was replaced by partial contents: partial download. Source: unvibecode/client.py, lines 35-40.
