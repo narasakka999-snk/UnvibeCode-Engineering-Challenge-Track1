@@ -1,0 +1,134 @@
+Scanning workspace: /opt/unvibecode-engine/api-jobs/public-preview/9b4352c79a4c4cd2b1871c500ea2eda1/input/express
+Parsing source files: 154
+[STAGE 1 COMPLETE] 154 files, 34 internal file edges, 0 package-level edges, 373 unresolved/external imports, 0 symbol edges, 0 unresolved Go usages
+
+[SHIPREADYV2 LINKER RESOLUTION COMPLETE]
+Output: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_resolved_graph.json
+Files indexed: 154
+Imports: 34 resolved, 0 package-level, 0 partial, 373 unresolved, 0 hard-path skipped, 0 uncertain
+Python enrichment: 0 files, 0 safe constants, 0 dynamic imports marked
+Symbols: 0/0 resolved; 12 ambiguous names in index
+Symbol edges added: 34
+Go symbol edges promoted: 0; unresolved Go usages: 0
+
+[SHIPREADYV2 LLM FEED COMPLETE]
+Repository: /opt/unvibecode-engine/api-jobs/public-preview/9b4352c79a4c4cd2b1871c500ea2eda1/input/express
+Resolved graph: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_resolved_graph.json
+Atomic chunks: 270
+Chunk relationships: 172
+LLM batches: 72
+Feed: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_llm_feed.jsonl
+Tokenizer: tiktoken:cl100k_base
+
+[SHIPREADYV2 SEMANTIC PACKS COMPLETE]
+Source 12K batches: 72
+Semantic packs: 4
+Semantic token range: 35,000 target-min / 55,000 target / 75,000 hard
+Packing guard: 73,500 content/context base + up to 1,500 bridge tokens
+  semantic_pack_001: 56,451 tokens, 6 source batches, 1 component(s), within-range
+  semantic_pack_002: 52,920 tokens, 6 source batches, 3 component(s), within-range
+  semantic_pack_003: 63,653 tokens, 10 source batches, 10 component(s), within-range
+  semantic_pack_004: 73,047 tokens, 50 source batches, 50 component(s), within-range
+Semantic feed: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_semantic_packs.jsonl
+
+[SHIPREADYV2 UNIFIED PIPELINE COMPLETE]
+Target folder: /opt/unvibecode-engine/api-jobs/public-preview/9b4352c79a4c4cd2b1871c500ea2eda1/input/express
+Run folder:    /tmp/uvc-yz7mf7v5/b/run
+Resolved JSON: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_resolved_graph.json
+LLM feed:      /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_llm_feed.jsonl
+Semantic feed: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_semantic_packs.jsonl
+
+[SHIPREADYV2 PASS 1 INPUT PREPARATION COMPLETE]
+Semantic input:  /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_semantic_packs.jsonl
+Compact taxonomy:/tmp/unvibecode-engine-jrvzzah7/engine/archetype_taxonomy_pass1_compact.yaml
+Output JSONL:    /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_llm_inputs.jsonl
+Tokenizer:       tiktoken:cl100k_base
+Shared context:  9,600 tokens
+Taxonomy routing: 7,902 LLM classification tokens; 9,174 deterministic-only tokens
+Semantic packs:  4
+LLM requests:    8
+Request tokens: min=13,796, avg=45,786, max=68,454
+Requests per semantic pack:
+  semantic_pack_001: 2
+  semantic_pack_002: 2
+  semantic_pack_003: 2
+  semantic_pack_004: 2
+Next: run exactly two pass1_semantic_request records for quality review.
+[SHIPREADYV2 PASS 1 FULL REPOSITORY RUN]
+Input:      /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_llm_inputs.jsonl
+Environment:/tmp/unvibecode-engine-jrvzzah7/engine/.env
+Runner:     full-v3-parallel-partial-20260717
+Model:      gpt-5.4-mini
+Reasoning:  low
+Risk triggers: NOT supplied to the LLM; deterministic stage only
+Validated 8 prepared requests; selected=8; reused=0; pending=8
+Running 8 pending Pass 1 request(s) with concurrency=2; each request gets one initial attempt and at most one validation correction.
+[1/8] START semantic_pack_001_part_01 | attempt=1/2, input=68,907, reasoning=low, max_output=32,000
+[2/8] START semantic_pack_001_part_02 | attempt=1/2, input=16,197, reasoning=low, max_output=32,000
+[2/8] DONE semantic_pack_001_part_02 in 9.2s | input=22929, cached=6579, output=568, reasoning=142 | paths=0, facts=0, evidence=3
+[3/8] START semantic_pack_002_part_01 | attempt=1/2, input=67,906, reasoning=low, max_output=32,000
+  ... semantic_pack_001_part_01 attempt 1 still processing (10s elapsed)
+[1/8] DONE semantic_pack_001_part_01 in 14.1s | input=75770, cached=6579, output=1337, reasoning=128 | paths=0, facts=0, evidence=7
+[4/8] START semantic_pack_002_part_02 | attempt=1/2, input=14,249, reasoning=low, max_output=32,000
+  ... semantic_pack_002_part_01 attempt 1 still processing (10s elapsed)
+[4/8] DONE semantic_pack_002_part_02 in 10.0s | input=20971, cached=6579, output=743, reasoning=128 | paths=0, facts=0, evidence=3
+[5/8] START semantic_pack_003_part_01 | attempt=1/2, input=68,930, reasoning=low, max_output=32,000
+  ... semantic_pack_002_part_01 attempt 1 still processing (20s elapsed)
+[5/8] DONE semantic_pack_003_part_01 in 7.8s | input=75917, cached=6579, output=697, reasoning=78 | paths=0, facts=0, evidence=5
+[6/8] START semantic_pack_003_part_02 | attempt=1/2, input=27,221, reasoning=low, max_output=32,000
+[3/8] DONE semantic_pack_002_part_01 in 26.5s | input=74970, cached=6579, output=3153, reasoning=196 | paths=1, facts=4, evidence=21
+[7/8] START semantic_pack_004_part_01 | attempt=1/2, input=68,497, reasoning=low, max_output=32,000
+[6/8] DONE semantic_pack_003_part_02 in 8.0s | input=33967, cached=6579, output=607, reasoning=0 | paths=0, facts=0, evidence=5
+[8/8] START semantic_pack_004_part_02 | attempt=1/2, input=38,580, reasoning=low, max_output=32,000
+[7/8] DONE semantic_pack_004_part_01 in 7.1s | input=75451, cached=6579, output=469, reasoning=173 | paths=0, facts=0, evidence=0
+[8/8] DONE semantic_pack_004_part_02 in 3.9s | input=45363, cached=6579, output=231, reasoning=0 | paths=0, facts=0, evidence=0
+
+[SHIPREADYV2 PASS 1 FULL REPOSITORY RUN COMPLETE]
+Completion: COMPLETE
+Successful: 8/8
+Results:    /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_full_results.jsonl
+Trace:      /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_full_trace.jsonl
+Artifacts:  /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_full_artifacts
+[SHIPREADYV2 BUSINESS PATH COMPILER]
+Report folder: /tmp/uvc-yz7mf7v5/b/run
+Pass 1 results: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_full_results.jsonl
+Prepared input: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_llm_inputs.jsonl
+Resolved graph: /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_resolved_graph.json
+Semantic packs: optional integrity source; not required at runtime
+
+[COMPILATION COMPLETE]
+Scan: COMPLETE (8/8 requests)
+Normalized paths: 1
+Components: 1
+Output: /tmp/uvc-yz7mf7v5/b/run/normalized_business_paths.json
+Workflow context: /tmp/uvc-yz7mf7v5/b/run/business_workflow_context.html
+Coverage: /tmp/uvc-yz7mf7v5/b/run/business_path_coverage.json
+Audit: /tmp/uvc-yz7mf7v5/b/run/business_path_compiler_audit.jsonl
+[SHIPREADYV2 STEP 3 - CRITICAL BUSINESS INSIGHT SELECTOR]
+Report folder:      /tmp/uvc-yz7mf7v5/b/run
+Normalized paths:   /tmp/uvc-yz7mf7v5/b/run/normalized_business_paths.json
+Coverage:           /tmp/uvc-yz7mf7v5/b/run/business_path_coverage.json
+Resolved graph:     /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_resolved_graph.json
+Prepared code input:/tmp/uvc-yz7mf7v5/b/run/shipreadyv2_pass1_llm_inputs.jsonl
+LLM calls:          none
+Compiler artifacts: read-only
+Validated repository express: paths=1, evidence=16, prepared_chunks=270
+[1/1] proving candidates for business_path_7ab30d9a5954c94c
+
+[STEP 3 COMPLETE]
+Candidates:          2
+Selected:            0 (minimum not forced)
+Investigation gaps:  0
+Rejected/duplicates: 2
+Selected reporting ceilings (detection count is unchanged):
+  CONFIRMED_FLAW: 0
+  EVIDENCE_BACKED_RISK: 0
+  INVESTIGATION_HYPOTHESIS: 0
+  WORKFLOW_OBSERVATION: 0
+  NOT_REPORTABLE: 0
+Step 4 rule: may downgrade; must not upgrade.
+Results:             /tmp/uvc-yz7mf7v5/b/run/selected_business_insights_v4.json
+Summary:             /tmp/uvc-yz7mf7v5/b/run/insight_selection_summary_v4.json
+Audit:               /tmp/uvc-yz7mf7v5/b/run/insight_selector_audit_v4.jsonl
+
+[NO-FINDINGS OUTCOME] Step 06 skipped because zero candidates met the reporting threshold. Customer no-findings report created at /tmp/uvc-yz7mf7v5/b/run/shipreadyv2_customer_business_flaw_report_no_findings.html
